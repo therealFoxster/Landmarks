@@ -11,6 +11,7 @@ import Combine
 final class ModelData: ObservableObject {
     @Published var landmarks: [Landmark] = load("landmarkData.json")
     var hikes: [Hike] = load("hikeData.json") // hikes will not be modified after initial load so no need for @Published attribute.
+    @Published var profile = Profile.default
     
     var categories: [String: [Landmark]] {
         // Dictionary with category names as keys and array of associated landmarks as values
